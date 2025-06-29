@@ -1,5 +1,17 @@
 /* styles.css */
 
+/* Make main content area wider */
+.main-content {
+  max-width: 1400px;  /* Default is ~900px — try 1100–1400px */
+  margin: 0 auto;
+}
+
+/* Hide title and subtitle text on banner */
+.quarto-title-banner .title,
+.quarto-title-banner .subtitle {
+  display: none;
+}
+
 #banner-controls {
   text-align: center;
   margin-top: -2rem;
