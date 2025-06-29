@@ -1,0 +1,336 @@
+/* styles.css */
+
+#banner-controls {
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.banner-arrow {
+  background-color: transparent;
+  border: 0px solid #444;
+  color: #444;
+  font-size: 1.3rem;
+  padding: -0.5rem 0.1rem;
+  margin: 0 1.1rem;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.banner-arrow:hover {
+  background-color: #444;
+  color: white;
+}
+
+@media (max-width: 600px) {
+
+  /* Keep your original padding rule */
+  .quarto-page {
+    padding: 0 1rem;
+  }
+
+  /* Stack columns vertically */
+  .columns {
+    flex-direction: column !important;
+  }
+
+  .column {
+    width: 100% !important;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Buttons and links should shrink nicely */
+  .flat-button {
+    font-size: 0.85rem !important;
+    padding: 0.4em 0.8em !important;
+    white-space: normal;
+  }
+
+  .icon-links i {
+    font-size: 1.4rem;
+  }
+
+  .name-header {
+    font-size: 1.6rem !important;
+  }
+
+  /* Ensure long text and links wrap */
+  summary, p, li, div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Fix images overflowing on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Prevent overlap from long captions or titles */
+  .quarto-title-banner {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Let pointer events through the banner’s ::before overlay */
+.quarto-title-banner::before {
+  pointer-events: none !important;
+}
+
+
+/* Dark theme custom colors */
+:root {
+  --site-bg: #1e1e1e;
+  --site-fg: #e0e0e0;
+  --navbar-bg: #2a2a2a;
+  --footer-bg: #2a2a2a;
+  --link-color: #80cbc4;
+  --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Global font size */
+html {
+  font-size: 20px !important;
+}
+
+/* Apply custom background & text colors */
+html, body, .site-body, .quarto-page {
+  background-color: var(--site-bg) !important;
+  color: var(--site-fg) !important;
+}
+
+/* Navbar styling */
+.navbar, .site-navbar {
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+  min-height: 3rem !important;
+  background-color: var(--navbar-bg) !important;
+  position: sticky !important;
+  top: 0;
+  z-index: 1050;
+}
+
+/* Reduce font size and spacing in navbar */
+.navbar-nav .nav-link {
+  font-size: 0.9rem !important;
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Remove underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Link colors and hover */
+a, .site-navbar a, .site-footer a {
+  color: var(--link-color) !important;
+}
+a:hover, .site-navbar a:hover, .site-footer a:hover {
+  opacity: 0.8 !important;
+}
+
+/* Footer styling */
+.site-footer {
+  background-color: var(--footer-bg) !important;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+/* Full-width titled line */
+.full-width-titled-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ccc;
+}
+.full-width-titled-line::before,
+.full-width-titled-line::after {
+  content: "";
+  flex-grow: 1;
+  border-top: 1px solid #ccc;
+  margin: 0 1rem;
+}
+
+/* Publications list styling */
+#publications ul {
+  list-style: none !important;
+  padding: 0 !important;
+}
+#publications li::before {
+  content: "•" !important;
+  color: var(--link-color) !important;
+  display: inline-block !important;
+  width: 1em !important;
+}
+
+/* Content max-width */
+.quarto-page {
+  max-width: 800px !important;
+  margin: auto !important;
+}
+
+/* Center-column vertical alignment */
+.center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Icon-links & name-header */
+.name-header {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.icon-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+/* remove the old invert filter so we can see real color */
+.icon-links i,
+.icon-links svg,
+.icon-links img {
+  filter: none !important;
+}
+/* force icon font (mask) and SVG fill into link-color */
+.icon-links i,
+.icon-links a svg {
+  color: var(--link-color) !important;
+}
+.icon-links svg {
+  fill: var(--link-color) !important;
+}
+.icon-links i,
+.icon-links img {
+  font-size: 1.95rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Publication entries */
+.pub-entry {
+  margin-bottom: 1.5rem;
+}
+.pub-title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.pub-links {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+}
+.pub-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--link-color);
+}
+.pub-links a:hover {
+  opacity: 0.8;
+}
+
+/* Flat-button styling */
+.flat-button {
+  display: inline-block;
+  background-color: #444;
+  color: #e0e0e0;
+  padding: 0.1em 0.7em;
+  font-size: 0.6rem;
+  text-decoration: none;
+  margin-right: 0.4rem;
+  border-radius: 0.2rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.flat-button:hover {
+  background-color: #666;
+  color: white;
+}
+
+/* Details summary toggles */
+details summary {
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 0.7rem;
+}
+details summary::after {
+  content: " +";
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+details[open] summary::after {
+  content: " −";
+}
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Banner keyframes for 20 images */
+@keyframes rotateBanner {
+  0%,   5%   { background-image: url('header_images/header1.jpg'); }
+  5%,   10%  { background-image: url('header_images/header2.jpg'); }
+  10%,  15%  { background-image: url('header_images/header3.jpg'); }
+  15%,  20%  { background-image: url('header_images/header4.jpg'); }
+  20%,  25%  { background-image: url('header_images/header5.jpg'); }
+  25%,  30%  { background-image: url('header_images/header6.jpg'); }
+  30%,  35%  { background-image: url('header_images/header7.jpg'); }
+  35%,  40%  { background-image: url('header_images/header8.jpg'); }
+  40%,  45%  { background-image: url('header_images/header9.jpg'); }
+  45%,  50%  { background-image: url('header_images/header10.jpg'); }
+  50%,  55%  { background-image: url('header_images/header11.jpg'); }
+  55%,  60%  { background-image: url('header_images/header12.jpg'); }
+  60%,  65%  { background-image: url('header_images/header13.jpg'); }
+  65%,  70%  { background-image: url('header_images/header14.jpg'); }
+  70%,  75%  { background-image: url('header_images/header15.jpg'); }
+  75%,  80%  { background-image: url('header_images/header16.jpg'); }
+  80%,  85%  { background-image: url('header_images/header17.jpg'); }
+  85%,  90%  { background-image: url('header_images/header18.jpg'); }
+  90%,  95%  { background-image: url('header_images/header19.jpg'); }
+  95%,  100% { background-image: url('header_images/header20.jpg'); }
+}
+
+/* Banner element styling */
+header#title-block-header .quarto-title-banner {
+  background-image: url('header_images/header1.jpg');
+  position: relative !important;
+  height: 55vh !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+header#title-block-header .quarto-title-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-color) !important;
+  z-index: 1 !important;
+}
+header#title-block-header .quarto-title-block-title,
+header#title-block-header .quarto-title-block-subtitle {
+  display: none !important;
+}
+header#title-block-header {
+  padding: 0 !important;
+  min-height: 0 !important;
+}
