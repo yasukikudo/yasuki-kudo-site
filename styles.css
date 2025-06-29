@@ -1,5 +1,32 @@
 /* styles.css */
 
+/* Reduce vertical space and align large logo */
+.navbar-logo {
+  height: 2.2rem;                /* Large logo */
+  vertical-align: middle;
+  margin-top: -0.3rem;           /* Nudge it upward */
+  margin-bottom: -0.3rem;        /* Pull it tighter from below */
+  padding: 0 !important;         /* Remove internal space */
+  line-height: 1 !important;
+  position: relative;
+  top: 1px;                      /* Fine adjustment */
+}
+
+/* Remove padding in navbar brand container */
+.navbar-brand {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  display: flex;
+  align-items: center;
+}
+
+/* If needed: shrink navbar height overall */
+.navbar {
+  min-height: 2.5rem !important;
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
 /* Make main content area wider */
 .main-content {
   max-width: 1400px;  /* Default is ~900px — try 1100–1400px */
@@ -131,7 +158,7 @@ html, body, .site-body, .quarto-page {
   font-size: 0.9rem !important;
   padding-top: 0.2rem !important;
   padding-bottom: 0.2rem !important;
-  line-height: 1.2 !important;
+  line-height: 2.5 !important;
 }
 
 /* Remove underline from links */
