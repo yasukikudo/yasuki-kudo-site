@@ -81,12 +81,12 @@
     margin-bottom: 1.5rem;
   }
 
-  /* Buttons and links should shrink nicely */
+  /* Buttons and links should shrink nicely 
   .flat-button {
     font-size: 0.85rem !important;
     padding: 0.4em 0.8em !important;
     white-space: normal;
-  }
+  }  */
 
   .icon-links i {
     font-size: 1.4rem;
