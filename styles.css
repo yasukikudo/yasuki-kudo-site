@@ -357,7 +357,6 @@ header#title-block-header .quarto-title-banner {
   height: 55vh !important;
   background-size: cover !important;
   background-position: center !important;
-  animation: rotateBanner 80s infinite;
 }
 header#title-block-header .quarto-title-banner::before {
   content: "";
