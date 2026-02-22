@@ -422,7 +422,9 @@ Hokkaido University
 <i class="bi bi-people" style="color: #aaa; margin-right: 0.5rem;"></i> <a href="https://liberalarts.utexas.edu/government/faculty/jj43765" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;"> Jesse C. Johnson </a>, Yasuki Kudo &amp; <a href="https://www.k-state.edu/polsci/about/faculty-staff/long-andrew.html" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;"> Andrew G. Long
 </a></li><a href="https://www.k-state.edu/polsci/about/faculty-staff/long-andrew.html" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;">
 </a></ul><a href="https://www.k-state.edu/polsci/about/faculty-staff/long-andrew.html" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;">
-</a><p><a href="https://www.k-state.edu/polsci/about/faculty-staff/long-andrew.html" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;"></a><a href="https://www.dropbox.com/scl/fi/uslodb6kibrg5cy4zpsg2/conference_poster_autonomy.pdf?rlkey=am1uvpyrd3tf2m52njz5slc5w&amp;dl=0" class="flat-button" target="_blank">Poster</a> <!-- paper 1 ends here --></p>
+<!--  <a href="https://www.dropbox.com/scl/fi/uslodb6kibrg5cy4zpsg2/conference_poster_autonomy.pdf?rlkey=am1uvpyrd3tf2m52njz5slc5w&dl=0" class="flat-button" target="_blank">Poster</a>
+-->
+<!-- paper 1 ends here -->
 <div style="margin-top: 2rem;">
 
 </div>
@@ -438,9 +440,9 @@ Hokkaido University
 <div style="margin-top: -0.5rem;">
 
 </div>
-<ul style="list-style: none; padding-left: 0;">
-<li>
-<i class="bi bi-people" style="color: #aaa; margin-right: 0.5rem;"></i> Yasuki Kudo &amp; <a href="https://www.yujimasumura.com/" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;"> Yuji Masumura</a>
+</a><ul style="list-style: none; padding-left: 0;"><a href="https://www.k-state.edu/polsci/about/faculty-staff/long-andrew.html" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;">
+</a><li><a href="https://www.k-state.edu/polsci/about/faculty-staff/long-andrew.html" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;">
+<i class="bi bi-people" style="color: #aaa; margin-right: 0.5rem;"></i> Yasuki Kudo &amp; </a><a href="https://www.yujimasumura.com/" target="_blank" style="color: #e0e0e0 !important; text-decoration: underline;"> Yuji Masumura</a>
 </li>
 </ul>
 <!-- paper 3 ends here -->
@@ -499,7 +501,7 @@ University of Texas at Austin (Fall 2024 — present)
 <em>Assistant</em>
 <ul>
 <li>
-GOV 360C: Introduction to International Relations, Spring 2025
+GOV 360C: Introduction to International Relations, Spring/Fall 2025; Spring 2026
 </li>
 <li>
 GOV 350K: Statistical Analysis in Political Science, Fall 2024
@@ -628,7 +630,17 @@ let bannerIndex = 0;
 let interval;
 
 function updateBanner(index) {
-  bannerEl.style.backgroundImage = `url('header_images/header${index + 1}.jpg')`;
+  // Briefly lower opacity for a fade-out effect
+  bannerEl.style.opacity = "0.8"; 
+  
+  // Create a temporary image object to "pre-load" the next photo
+  const nextImg = new Image();
+  nextImg.src = `header_images/header${index + 1}.jpg`;
+  
+  nextImg.onload = () => {
+    bannerEl.style.backgroundImage = `url('${nextImg.src}')`;
+    bannerEl.style.opacity = "1"; // Fade back in once loaded [cite: 85, 87]
+  };
 }
 
 function setBannerIndex(index) {
@@ -641,7 +653,7 @@ function setBannerIndex(index) {
 function startAutoRotation() {
   interval = setInterval(() => {
     setBannerIndex(bannerIndex + 1);
-  }, 10000); // 10s
+  }, 7000); // 7s
 }
 
 prevBtn.addEventListener("click", () => setBannerIndex(bannerIndex - 1));

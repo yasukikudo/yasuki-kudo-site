@@ -357,6 +357,9 @@ header#title-block-header .quarto-title-banner {
   height: 55vh !important;
   background-size: cover !important;
   background-position: center !important;
+  
+  transition: background-image 1s ease-in-out; /* Adds the fade timing [cite: 85, 87] */
+  background-color: #1e1e1e; /* Match site bg to prevent white flashes during load */
 }
 header#title-block-header .quarto-title-banner::before {
   content: "";
