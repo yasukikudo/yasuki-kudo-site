@@ -1,5 +1,157 @@
 /* styles.css */
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css");
+
+/* Teaching section */
+.inst-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  margin-top: 1.2rem;
+}
+.inst-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.inst-period {
+  font-size: 1rem;
+  color: #aaa;
+}
+.inst-card {
+  border: 3px solid #333;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 40px;
+}
+.role-badge {
+  display: inline-block;
+  font-size: 1rem;
+  color: #aaa;
+  border: 0.5px solid #aaa;
+  border-radius: 999px;
+  padding: 1px 8px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+.course-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 1rem;
+  color: #e0e0e0;
+  padding: 2px 0 2px 8px;
+  border-left: 1.5px solid #333;
+  margin-left: 2px;
+  margin-bottom: 10px;
+}
+.course-sem {
+  font-size: 1rem;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+
+
+
+/* Icon-links & name-header */
+.icon-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1rem;
+  gap: 6px;
+}
+.icon-links a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #aaa !important;
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease-in-out;
+}
+.icon-links a i,
+.icon-links a .ai {
+  color: #80cbc4 !important;
+  font-size: 1rem;
+  line-height: 2.1;
+  vertical-align: middle;
+  flex-shrink: 0;
+  width: 1.2rem;
+  text-align: center;
+}
+.icon-links a:hover {
+  color: #e0e0e0 !important;
+}
+
+/* In Progress section */
+.progress-section-title {
+  font-size: 1rem;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+  margin-top: 1rem;
+}
+.progress-card {
+  border: 3px solid #333;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 40px;
+  margin-top: 1px;
+}
+.other-projects-list {
+  border: 3px solid #333;
+  border-radius: 6px;
+  padding: 4px 14px;
+}
+.other-project-row {
+  font-size: 1rem;
+  color: #e0e0e0;
+  padding: 8px 0;
+  border-bottom: 0.5px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.other-project-row:last-child {
+  border-bottom: none;
+}
+.other-project-authors {
+  font-size: 1rem;
+  color: #555;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+  
+.status {
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 0.35rem;
+  padding: 0.15em 0.6em;
+  margin-bottom: 6px;
+  border: 0.5px solid;
+}
+.status.submitted {
+  color: #aaa;
+  border-color: #aaa;
+}
+.coauth {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-top: 1px;
+}
+
 /* Reduce vertical space and align large logo */
 .navbar-logo {
   height: 2.2rem;                /* Large logo */
@@ -284,24 +436,80 @@ footer {
   opacity: 0.8;
 }
 
-/* Flat-button styling */
+/* Flat-button styling — code-chip look */
 .flat-button {
   display: inline-block;
-  background-color: #444;
+  background-color: #2b2b2b;
   color: #e0e0e0;
-  padding: 0.1em 0.7em;
-  font-size: 0.6rem;
+  padding: 0.15em 0.6em;
+  font-size: 0.7rem;
+  /*font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; */
   text-decoration: none;
   margin-right: 0.4rem;
-  border-radius: 0.2rem;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-weight: 500;
+  margin-bottom: 0.3rem;
+  border: 0.5px solid #80cbc4;
+  border-radius: 0.35rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 .flat-button:hover {
-  background-color: #666;
-  color: white;
+  background-color: #3a3a3a;
+  border-color: #666;
+  color: #fff;
+}
+
+.flat-button-blue {
+  border-color: #6699cc;
+  color: #8fb8e0 !important;
+}
+.flat-button-blue:hover {
+  background-color: #3a3a3a;
+  border-color: #8fb8e0;
+  color: #aecdf0 !important;
+}
+
+.flat-button-amber {
+  border-color: #cc9a52;
+  color: #e0b876 !important;
+}
+.flat-button-amber:hover {
+  background-color: #3a3a3a;
+  border-color: #e0b876;
+  color: #f0cd96 !important;
+}
+
+.flat-button-rose {
+  border-color: #b56b7a;
+  color: #d18b9a !important;
+}
+.flat-button-rose:hover {
+  background-color: #3a3a3a;
+  border-color: #d18b9a;
+  color: #e6a9b6 !important;
+}
+
+.flat-button-lime {
+  border-color: #8bc34a;
+  color: #aed581 !important;
+}
+.flat-button-lime:hover {
+  background-color: #3a3a3a;
+  border-color: #aed581;
+  color: #c5e1a5 !important;
+}
+
+/* Co-author links — color-only, underline on hover */
+.coauthor-link {
+  color: #e0e0e0 !important;
+  text-decoration: none;
+  border-bottom: 1px dotted #888;
+  transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.coauthor-link:hover {
+  color: #80cbc4 !important;
+  border-bottom-color: #80cbc4;
 }
 
 /* Details summary toggles */
