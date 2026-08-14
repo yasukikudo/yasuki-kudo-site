@@ -33,7 +33,7 @@
   font-size: 1rem;
   color: #aaa;
   border: 0.5px solid #aaa;
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 1px 8px;
   margin-bottom: 10px;
   margin-top: 4px;
@@ -55,8 +55,6 @@
   color: #aaa;
   white-space: nowrap;
 }
-
-
 
 
 /* Icon-links & name-header */
@@ -378,6 +376,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;   /* 追加: 子要素(block要素)を横方向に中央寄せ */
+  text-align: center;    /* 追加: テキスト自体も中央寄せ */
 }
 
 /* Icon-links & name-header */
